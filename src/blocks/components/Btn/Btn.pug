@@ -1,0 +1,8 @@
+mixin Btn({ children, typeView, tag, className })
+	- const mixClass = {mod: typeView ? `btn btn--${typeView}` : 'btn', addClasses: className ? `${className}` : ''}
+	- const classes = `${mixClass.addClasses} ${mixClass.mod}`;
+
+	if tag === 'a'
+		a(class= classes.trim())&attributes(attributes)!= children || Ссылка
+	else
+		button(class= classes.trim())&attributes(attributes)!= children || Кнопка

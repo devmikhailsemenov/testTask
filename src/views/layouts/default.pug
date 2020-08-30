@@ -1,0 +1,36 @@
+include ../helpers/mixins.pug
+
+block globalVars
+
+doctype html
+
+html(lang='ru')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content="width=320, initial-scale=1, shrink-to-fit=no")
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='description' content=pageDescription || '')
+		meta(name='keywords' content=pageKeywords || '')
+
+		link(href='styles/main.css' type="text/css" rel='stylesheet')
+
+		block meta
+			title Home
+
+	body
+		block header
+			+Header()
+
+		main.main
+			block content
+				p Контент
+
+		block footer
+			+Footer()
+
+		block page-bottom
+			+MobileMenu()
+			+Preloader()
+
+			script(src="js/main.js")
+

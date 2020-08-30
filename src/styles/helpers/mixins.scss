@@ -1,0 +1,97 @@
+//Медиа запросы для адаптивной вёрстки
+@mixin min-1200 {
+	@media (min-width: $screen-xl) {
+		@content;
+	}
+}
+
+@mixin min-992 {
+	@media (min-width: $screen-xl-min) {
+		@content;
+	}
+}
+
+@mixin min-768 {
+	@media (min-width: $screen-md) {
+		@content;
+	}
+}
+
+@mixin min-576 {
+	@media (min-width: $screen-xs) {
+		@content;
+	}
+}
+
+@mixin minmax($min, $max) {
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+@mixin min($min) {
+	@media (min-width: $min) {
+		@content;
+	}
+}
+
+@mixin max($max) {
+	@media (max-width: $max) {
+		@content;
+	}
+}
+
+//Медиа запрос для использования hover только не на touch-устройствах
+@mixin adaptive-hover {
+	@media (hover: hover) and (pointer: fine), (min-width:0\0) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+//Миксины для обнуления margin у последнего или первого элемента
+@mixin mb($size) {
+	margin-bottom: $size;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@mixin mt($size) {
+	margin-top: $size;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+@mixin mr($size) {
+	margin-right: $size;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+@mixin ml($size) {
+	margin-left: $size;
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+//Миксин анимации keyframes
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}

@@ -1,0 +1,57 @@
+mixin AboutCompany()
+	section.about-company(id='about')
+		.container
+			.about-company__row.section-row
+				.about-company__img-wrap.section-col
+					img.about-company__img(src='img/about/about-img.jpg' alt='Фото кафе')
+				.about-company__info.section-col
+					h2.about-company__title.section-title О кафе
+					.about-company__img-wrap
+						img.about-company__img(src='img/about/about-img.jpg' alt='Фото кафе')
+					p.about-company__text.
+						Наше кафе это современный взгляд на здоровое питание. Новый проект посвящённый растущей сегодня осознанности, которая здесь прослеживается во всём — начиная с ингредиентов в тарелке, и заканчивая элементами интерьера и упаковкой из экологичных перерабатываемых материалов. Меню с чистыми вкусами и сочетаниями, без сахара, глютена и лактозы. 
+					.about-company__label.
+						С нетерпением ждем ваш визит, #[br]
+						ваша команда #[span.about-company__label-strong CAFE]
+					+Navbar({ 
+						className: 'about-company__navbar',
+						navArr: [
+							{ 
+								value: `
+									<span class='navbar__link-icon navbar__link-icon--purple'>
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+										    <defs>
+										        <filter id="9hlqjggeda">
+										            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.925490 0 0 0 0 0.380392 0 0 0 0 0.623529 0 0 0 1.000000 0"/>
+										        </filter>
+										    </defs>
+										    <g fill="none" fill-rule="evenodd" filter="url(#9hlqjggeda)" transform="translate(-6 -6)">
+										        <path fill="#FFF" fill-rule="nonzero" d="M25.5 23.5c.276 0 .5-.224.5-.5v-.5c0-.276-.224-.5-.5-.5H25v-1.5c0-3.526-2.61-6.434-6-6.92V13h1.5c.276 0 .5-.224.5-.5V12c0-.276-.224-.5-.5-.5h-5c-.276 0-.5.224-.5.5v.5c0 .276.224.5.5.5H17v.58c-3.39.486-6 3.394-6 6.92V22h-.5c-.276 0-.5.224-.5.5v.5c0 .276.224.5.5.5h15zm-2-1.5h-11v-1.5c0-3.033 2.467-5.5 5.5-5.5s5.5 2.467 5.5 5.5V22z"/>
+										    </g>
+										</svg>
+									</span>
+									<span>Доставка и take away</span>
+								`, 
+								link: '#'
+							},
+
+							{ 
+								value: `
+									<span class='navbar__link-icon navbar__link-icon--orange'>
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+										    <defs>
+										        <filter id="s58u0pzu3a">
+										            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.952941 0 0 0 0 0.572549 0 0 0 0 0.000000 0 0 0 1.000000 0"/>
+										        </filter>
+										    </defs>
+										    <g fill="none" fill-rule="evenodd" filter="url(#s58u0pzu3a)" transform="translate(-6 -6)">
+										        <path fill="#FFF" fill-rule="nonzero" d="M18.914 24.75v-.001c.249-.008.496-.07.72-.18 1.611-.798 4.128-1.006 5.134-1.058 1.133-.058 2.02-.976 2.02-2.09v-8.578c0-1.154-.957-2.093-2.134-2.093-.341 0-4.25.177-6.615 1.556-2.366-1.379-6.274-1.556-6.615-1.556-1.177 0-2.135.939-2.135 2.093v8.578c0 1.114.888 2.032 2.021 2.09 1.006.052 3.522.26 5.133 1.058.224.11.472.172.72.18v.001h1.751zM16.8 23.14c-1.764-.671-4.21-.877-5.422-.94-.435-.022-.776-.364-.776-.779v-8.578c0-.43.37-.78.822-.78.545.002 3.46.213 5.429 1.107.318.144.527.455.527.805l.004 2.9v5.856c0 .303-.3.517-.584.409zm1.896-.41v-5.855l.004-2.9c0-.35.21-.661.527-.806 1.968-.893 4.884-1.104 5.428-1.106.453 0 .822.35.822.78v8.578c0 .415-.34.757-.775.779-1.213.063-3.658.269-5.423.94-.283.108-.583-.106-.583-.41z"/>
+										    </g>
+										</svg>
+									</span>
+									<span>Меню</span>
+								`, 
+								link: '#'
+							},
+						]
+					})

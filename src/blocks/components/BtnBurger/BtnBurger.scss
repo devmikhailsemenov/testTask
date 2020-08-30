@@ -1,0 +1,28 @@
+.btn-burger {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 14px;
+		height: 2px;
+		background-color: #fff;
+	}
+
+	&::before {
+		transform: translate(-50%, calc(-50% - 3.5px));
+	}
+
+	&::after {
+		transform: translate(-50%, calc(-50% + 3.5px));
+	}
+
+	@include min(992px) {
+		display: none;
+	}
+}

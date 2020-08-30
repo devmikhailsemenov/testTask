@@ -1,0 +1,138 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+	display: block;
+	text-align: center;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	white-space: nowrap;
+	transition-timing-function: ease-out;
+
+	&__content {
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		&::after {
+			content: '';
+			width: 0;
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 0;
+		}
+	}
+}
+
+.overlay-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(#999999, .7);
+	opacity: 1;
+}
+
+.popup {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+	padding: 30px 15px;
+	width: 100%;
+	height: 100%;
+	font-size: initial;
+	text-align: left;
+	transform: translateX(0);
+	pointer-events: auto;
+	transition-timing-function: ease-out;
+	box-shadow: none;
+	background-color: #fff;
+	
+	&__title-wrap {
+		margin-bottom: 40px;
+	}
+
+	&__btn {
+		width: 100%;
+	}
+
+	&__close-btn {
+		display: block;
+		width: 10px;
+		height: 10px;
+		cursor: pointer;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+}
+
+.popup-success {
+	text-align: center;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.box-hidden {
+	display: none;
+}
+
+.popup_enter-to, .popup_leave-to {
+	transition-property: opacity, transform;
+	transition-duration: .3s;
+}
+
+.box-hidden.popup_enter-to {
+	display: inline-block;
+	transform: translateX(-100%);
+}
+
+.box-hidden.popup_leave-to {
+	display: inline-block;
+	transform: translateX(100%);
+}
+
+@include min(992px) {
+	.popup {
+		max-width: 480px;
+		text-align: center;
+		height: auto;
+		border-radius: 6px;
+		padding: 30px 15px;
+
+		&__title {
+			font-size: 32px;
+			line-height: 32px;
+			margin-bottom: 28px;
+		}
+
+		&__btn-wrap {
+			.btn {
+				max-width: 306px;
+			}
+		}
+	}
+
+	.box-hidden.popup_enter-to {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+
+	.box-hidden.popup_leave-to {
+		transform: translateX(100px);
+		opacity: 0;
+	}
+}

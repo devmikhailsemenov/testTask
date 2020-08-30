@@ -1,0 +1,34 @@
+mixin MainForm({ arrayFields, className, filesBlockID })
+
+	- const classes = className ? `${ className } main-form` : `main-form`
+
+	form(class= classes)
+		.main-form__fields
+			each field, i in arrayFields
+				- const { required, name, label, id, textarea, errorText, successText } = field
+
+					+FieldText({
+						className: 'main-form__field',
+						required,
+						name,
+						label,
+						id,
+						textarea,
+						errorText,
+						successText
+					})
+
+			+FilesBlock({
+				className: 'main-form__files-block',
+				id: filesBlockID,
+				descr: 'прикрепите файл (до 5Мб)'
+			})
+
+		.main-form__submit-wrap
+			.container
+				.main-form__submit-block
+					+Btn({
+						className: 'main-form__submit-btn',
+						children: 'Отправить'
+					})
+					p.main-form__agree-warning &lt;--отправляя форму, вы соглашаетсь с <a href='#' data-modal='privacy-policy'>политикой конфиденциальности</a>--&gt;

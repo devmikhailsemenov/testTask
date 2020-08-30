@@ -1,0 +1,31 @@
+mixin MainScreen({ title, description, home })
+	section(class=`main-screen ${home ? 'main-screen--home-page' : ''}`)
+		.main-screen__slider.swiper-container
+			.swiper-wrapper
+				.main-screen__slide.swiper-slide
+					img.main-screen__slide-img(src='img/main-screen/bg1.png' alt='Слайд 1')
+				.main-screen__slide.swiper-slide
+					img.main-screen__slide-img(src='img/main-screen/bg2.png' alt='Слайд 2')
+				.main-screen__slide.swiper-slide
+					img.main-screen__slide-img(src='img/main-screen/bg3.png' alt='Слайд 3')
+		.main-screen__content-wrap.container
+			.main-screen__content
+				.main-screen__info
+					p.main-screen__info-text.
+						#[span.main-screen__info-title Дорогие гости,]
+						совсем скоро состоится&nbsp;открытие обновленной&nbsp;версии сайта. А&nbsp;пока ознакомиться с&nbsp;актуальными новостями можно в&nbsp;нашем аккаунте #[br]
+						#[a.main-screen__info-link(href='#') B Instagram]
+				form.main-screen__form
+					.main-screen__form-title Узнайте о запуске сайта первым
+					.main-screen__form-inner
+						+FieldText({
+							name: 'email', 
+							label: 'E-mail',
+							required: true, 
+							id: 'email-user'
+						})
+						button.main-screen__form-submit-btn(type='submit')
+
+		a.main-screen__btn-to-bottom(href='#about') О ресторане
+
+

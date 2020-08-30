@@ -1,0 +1,270 @@
+.main-screen {
+	position: relative;
+	min-height: 100vh;
+
+	&--active {
+		.main-screen__info, .main-screen__form {
+			transform: translateY(0);
+			opacity: 1;
+		}
+
+		.main-screen__btn-to-bottom {
+			opacity: 1;
+		}
+	}
+
+	&__slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(#000, .3);
+			z-index: 2;
+		}
+	}
+
+	&__slide-img {
+		object-fit: cover;
+		min-width: 100vh;
+		height: 100vw;
+		transform: rotate(90deg);
+		transform-origin: 50vw 50vw;
+	}
+
+	&__content-wrap {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+		z-index: 1;
+		padding-top: 96px;
+		padding-bottom: 36px;
+		text-align: center;
+		color: #f9f9f9;
+	}
+
+	&__info {
+		margin-bottom: 32px;
+		max-width: 576px;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform .7s ease, opacity .7s ease;
+		transform: translateY(50px);
+		opacity: 0;
+	}
+
+	&__info-text {
+		font-weight: 700;
+		font-size: 22px;
+		letter-spacing: 0.55px;
+		line-height: 1.18;
+		font-stretch: normal;
+	}
+
+	&__info-title {
+		display: block;
+		margin-bottom: 4px;
+		font-size: 12px;
+		letter-spacing: 0.5px;
+		line-height: 1.51;
+	}
+
+	&__info-link {
+		color: inherit;
+		border-bottom: 1px solid rgba(#f9f9f9, .3);
+		transition: color .2s linear, border-color .2s linear;
+
+		@include adaptive-hover {
+			color: darken(#f9f9f9, 20%);
+			border-color: darken(#f9f9f9, 20%);
+		}
+	}
+
+	&__form {
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform .7s ease, opacity .7s ease;
+		transform: translateY(50px);
+		opacity: 0;
+		transition-delay: .2s;
+	}
+
+	&__form-title {
+		font-size: 12px;
+		margin-bottom: 4px;
+		line-height: 1.51;
+		letter-spacing: 0.5px;
+	}
+
+	&__form-inner {
+		display: flex;
+		align-items: center;
+
+		.field-wrap {
+			flex: 0 0 100%;
+
+			&__input {
+				padding-left: 6px;
+				padding-right: 30px;
+			}
+		}
+	}
+
+	&__form-submit-btn {
+		position: relative;
+		flex: 0 0 24px;
+		width: 24px;
+		height: 24px;
+		margin-left: -30px;
+		cursor: pointer;
+		@include adaptive-hover {
+			&::before {
+				transform: translate(-50%, -50%) translateX(6px);
+			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			background: url('../img/icons/arrow-next.svg') center no-repeat;
+			background-size: 70% auto;
+			transition: transform .2s linear;
+		}
+	}
+
+	&__btn-to-bottom {
+		display: none;
+	}
+}
+
+@include min(480px) {
+	.main-screen {
+		&__slide-img {
+			min-width: 100%;
+			width: 100%;
+			min-height: 100vh;
+			height: auto;
+			transform: rotate(0deg);
+
+		}
+	}
+}
+
+@include min(992px) {
+	.main-screen {
+
+		&__slide-img {
+			transform: rotate(0deg);
+		}
+
+		&__content-wrap {
+			padding-top: 100px;
+			padding-bottom: 150px;
+		}
+
+		&__info {
+			max-width: 880px;
+			margin-bottom: 71px;
+		}
+
+		&__info-title {
+			font-size: 16px;
+		}
+
+		&__info-text {
+			font-size: 36px;
+			line-height: 1.18;
+		}
+
+		&__form-title {
+			font-size: 16px;
+			
+		}
+
+		&__form-submit-btn {
+			flex: 0 0 36px;
+			width: 36px;
+			height: 36px;
+			margin-left: -36px;
+		}
+
+		&__form-inner {
+			.field-wrap {
+				&__input {
+					padding-left: 6px;
+					padding-right: 42px;
+				}
+			}
+		}
+
+		&__btn-to-bottom {
+			position: absolute;
+			left: 50%;
+			bottom: 40px;
+			transform: translateX(-50%);
+			z-index: 2;
+			cursor: pointer;
+			letter-spacing: 0.1px;
+  			color: #ffffff;
+  			font-weight: 700;
+  			display: inline-flex;
+  			align-items: center;
+  			transition: opacity .7s ease;
+			opacity: 0;
+			transition-delay: 1s;
+
+			&::before {
+				content: '';
+				display: inline-block;
+				width: 36px;
+				height: 36px;
+				border-radius: 50%;
+				background: rgba(#fff, .1) url('../img/icons/shevron.svg') center no-repeat;
+				margin-right: 7px;
+				animation: 1.5s ease-in infinite arrow-animate;
+			}
+		}
+	}
+}
+
+@include min(1440px) {
+	.main-screen {
+		min-height: 850px;
+
+		&__content-wrap {
+			padding-top: 258px;
+			padding-bottom: 178px;
+		}
+	}
+}
+
+@keyframes arrow-animate {
+	0% {
+		transform: translateY(-5px)
+	}
+
+	50% {
+		transform: translateY(0px)
+	}
+
+	100% {
+		transform: translateY(-5px)
+	}
+}

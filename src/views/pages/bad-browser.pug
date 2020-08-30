@@ -1,0 +1,22 @@
+extends ../layouts/error-page
+
+block meta
+	title Bad browser
+
+block content
+	.error-block
+		.error-block__content
+			h1.error-block__title #[span Bad Browser]
+			p.error-block__main-text.
+				Упс. Ваш браузер устарел. <br>
+				Рекомедуем установить последнюю версию одного из этих браузеров:
+			.error-block__good-browsers
+				a.error-block__good-browsers-link(href='https://www.google.com/chrome/')
+					img(src='img/content/chrome.svg' alt='Логотип Google Chrome')
+					span Chrome
+				a.error-block__good-browsers-link(href='https://www.mozilla.org/ru/')
+					img(src='img/content/firefox.svg' alt='Логотип Mozila Firefox')
+					span Firefox
+				a.error-block__good-browsers-link(href='https://www.opera.com/ru')
+					img(src='img/content/opera.svg' alt='Логотип Opera')
+					span Opera

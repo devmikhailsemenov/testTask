@@ -1,0 +1,28 @@
+.box-hidden {
+	display: none;
+}
+
+.smoothly-show {
+	transition-property: opacity;
+	transition-duration: .3s;
+}
+
+.box-hidden.smoothly-show {
+	display: block;
+	opacity: 0;
+}
+
+.slide-in, .slide-out {
+	transition: all .4s ease;
+	overflow: hidden;
+}
+
+.box-hidden.slide-in, .box-hidden.slide-out {
+	display: block;
+	height: 0 !important;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	opacity: 0;
+}

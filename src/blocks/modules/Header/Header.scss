@@ -1,0 +1,93 @@
+.header {
+	padding: 16px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	transition: background .2s linear;
+
+	&--active {
+		background-color: rgba(#000, .4);
+
+		.header__logo-img {
+			max-width: 26px;
+		}
+	}
+
+	&__row {
+		justify-content: space-between;
+	}
+
+	&__logo-img {
+		max-width: 48px;
+		transition: max-width .2s linear;
+	}
+
+	&__main {
+		display: none;
+	}
+}
+
+@include min(992px) {
+	.header {
+		color: #fff;
+
+		&--active {
+			.header__logo-img {
+				max-width: 40px;
+			}
+		}
+
+		&__logo-img {
+			max-width: 64px;
+		}
+
+		&__main {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			max-width: 1002px;
+			flex: 1 0 auto;
+		}
+
+		&__navbar {
+			.navbar__list {
+				align-items: center;
+			}
+
+			.navbar__item {
+				@include mr(48px);
+			}
+
+			.navbar__link {
+				font-weight: 700;
+				color: #fff;
+				letter-spacing: 0.1px;
+			}
+		}
+
+		&__btn-menu-open-wrap {
+			display: none;
+		}
+
+		&__language {
+			font-size: 13px;
+			display: inline-flex;
+			vertical-align: bottom;
+			align-items: center;
+			cursor: pointer;
+
+			&::before {
+				content: url('../img/icons/globe.svg');
+				height: 24px;
+				margin-right: 2px;
+			}
+		}
+	}
+}
+
+@include min(1200px) {
+	.header {
+	}
+}

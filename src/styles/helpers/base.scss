@@ -1,0 +1,78 @@
+:root {
+  --label-width: auto;
+}
+
+* {
+	outline: none;
+	box-sizing: border-box;
+}
+
+button {
+	border: none;
+	padding: 0;
+	background: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+textarea {
+	resize: none;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'HelveticaNeue', sans-serif;
+	font-size: 14px;
+	line-height: 1.45;
+	font-weight: 400;
+	color: $textDarkColor;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	@include min(992px) {
+		// font-size: 18px;
+		// line-height: 24px;
+	}
+}
+
+.body_hidden {
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.section-title {
+	font-size: 24px;
+	font-weight: 700;
+	color: #16244a;
+
+	@include min(992px) {
+		font-size: 36px;
+	}
+}
+
+.main {
+	flex: 1 0 auto;
+}
+
+.swiper-slide {
+	height: auto;
+}
